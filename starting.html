@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Place Your Order</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f4ef; 
+        color: #333; 
+        text-align: center;
+        padding-top: 50px; 
+      }
+      .container {
+        max-width: 600px;
+        margin: auto;
+      }
+      .button {
+        background-color: #8b5c39; 
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px; 
+        margin-top: 20px; 
+      }
+      .button:hover {
+        background-color: #a67651; 
+      }
+      .header {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .status {
+        margin-top: 20px;
+      }
+</style>
+</head>
+<body>
+   
+<div class="container">
+    <div class="header">Coffee Order System</div>
+    <button class="button" onclick="window.location.href='order1.html'">Start your order here</button>
+    <div class="status" id="orderStatus">Order Status</div> 
+  </div>
+  
+  <script>
+    function startOrder() {
+      document.getElementById('orderStatus').innerHTML = 'Order is being prepared...';
+    }
+  </script>
+  
+</body>
+</html>

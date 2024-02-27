@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Select Beverage</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f4ef;
+    color: #333;
+    text-align: center;
+    padding-top: 20px;
+  }
+  .container {
+    max-width: 600px;
+    margin: auto;
+  }
+  .header, .status {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  .beverage-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  .beverage-button {
+    background-color: #8b5c39;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    flex-basis: 45%; 
+  }
+  .beverage-button:hover {
+    background-color: #a67651;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <a href="starting.html" style="text-decoration: none; color: inherit;">
+        <div class="header">Coffee Order System</div>
+      </a>
+  <div class="status">Select the beverage</div>
+  <div class="beverage-container">
+    <button class="beverage-button" onclick="window.location.href='DarkRoast.html'">Dark Roast</button>
+    <button class="beverage-button" onclick="window.location.href='Espresso.html'">Espresso</button>
+    <button class="beverage-button" onclick="window.location.href='HouseBlend.html'">House Blend</button>
+    <button class="beverage-button" onclick="window.location.href='Decaf.html'">Decaf</button>
+  </div>
+</div>
+
+</body>
+</html>

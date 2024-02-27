@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Select Beverage</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f4ef;
+    color: #333;
+    text-align: center;
+    padding-top: 20px;
+  }
+  .container {
+    max-width: 600px;
+    margin: auto;
+  }
+  .header, .status {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  .condiment-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  .condiment-button {
+    background-color: #8b5c39;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    flex-basis: 45%; 
+  }
+  .condiment-button:hover {
+    background-color: #a67651;
+  }
+  .submit-button{
+    background-color: #8b5c39;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    flex-basis: 45%;
+  }
+</style>
+</head>
+<body>
+    <div class="container">
+      <a href="starting.html" style="text-decoration: none; color: inherit;">
+        <div class="header">Coffee Order System</div>
+      </a>
+      <div class="status">Select the condiment</div>
+      <div class="condiment-container">
+        <button class="condiment-button" onclick="toggleCondiment('Soy')">Soy</button>
+        <button class="condiment-button" onclick="toggleCondiment('Milk')">Milk</button>
+        <button class="condiment-button" onclick="toggleCondiment('Mocha')">Mocha</button>
+        <button class="condiment-button" onclick="toggleCondiment('Whip')">Whip</button>
+      </div>
+      <button class="submit-button" onclick="submitOrder()">Submit Order</button>
+      <div id="order-summary"></div>
+    </div>
+    
+    <script>
+      let selectedCondiments = [];
+      
+      function toggleCondiment(condiment) {
+        const index = selectedCondiments.indexOf(condiment);
+        if (index > -1) {
+          selectedCondiments.splice(index, 1); 
+        } else {
+          selectedCondiments.push(condiment); 
+        }
+        updateButtonStyles();
+      }
+  
+      function updateButtonStyles() {
+        const buttons = document.querySelectorAll('.condiment-button');
+        buttons.forEach(button => {
+          const condiment = button.textContent;
+          if (selectedCondiments.includes(condiment)) {
+            button.style.backgroundColor = 'green'; 
+          } else {
+            button.style.backgroundColor = ''; 
+          }
+        });
+      }
+      
+      function submitOrder() {
+        const beverage = 'Espresso'; 
+        const orderSummary = `Your order is ${beverage} with ` + selectedCondiments.join(', ');
+        document.getElementById('order-summary').textContent = orderSummary;
+      }
+    </script>
+  </body>
+  </html>
